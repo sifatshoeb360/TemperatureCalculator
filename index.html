@@ -66,18 +66,21 @@
         </div>
     </div>
     <script>
-        function fCalculate() {
-  
-        let celsius=parseFloat(document.getElementById('celsius').value);
-        let result=((celsius*9)/5)+32;
-        document.getElementById('fahrenheit').value=result.toFixed(2);
-        }
-        function cCalculate() {
+       
+        document.getElementById("celsius").addEventListener('input',() =>{
 
-        let fahrenheit=parseFloat(document.getElementById('fahrenheit').value);
-        let result=((fahrenheit-32)/9)*5;
-        document.getElementById('celsius').value=result.toFixed(4);
-        }
+            let celsius=parseFloat(document.getElementById('celsius').value);
+            let result=((celsius*9)/5)+32;
+            document.getElementById('fahrenheit').value=result.toFixed(2);
+
+        })
+        
+        document.getElementById("fahrenheit").addEventListener('input',() =>{
+            let fahrenheit=parseFloat(document.getElementById('fahrenheit').value);
+            let result=((fahrenheit-32)/9)*5;
+            document.getElementById('celsius').value=result.toFixed(4);
+        })
+        
     </script>
 </body>
 </html>
